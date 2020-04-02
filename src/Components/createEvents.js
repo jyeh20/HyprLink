@@ -47,9 +47,6 @@ class createEvents extends React.Component {
 
   submitForm = () => {
     let db = firebase.firestore();
-    console.log("Calling collection");
-    console.log(this.state);
-    console.log(typeof this.state);
     db.collection("events")
       .add(this.state)
       .then(function(docRef) {
@@ -58,7 +55,6 @@ class createEvents extends React.Component {
       .catch(function(error) {
         console.error("Error adding document: ", error);
       });
-    this.setState({ toContact: true });
   };
 
   render() {
@@ -69,11 +65,11 @@ class createEvents extends React.Component {
         <img id="title" src={hyprlink_title} alt="hyprlink"></img>
         <img id="plus" src={plus} alt="+"></img>
 
-        <form onSubmit={this.submitForm}>
+        <form >
           <h2>CREATE NEW EVENT</h2>
 
           <div className="form-group">
-            <label for="nameInput"></label>
+            <label htmlFor="nameInput"></label>
             <input
               type="text"
               name="name"
@@ -86,7 +82,7 @@ class createEvents extends React.Component {
           </div>
 
           <div className="form-group">
-            <label for="locationInput"></label>
+            <label htmlFor="locationInput"></label>
             <span>Location</span>
             <input
               type="text"
@@ -100,7 +96,7 @@ class createEvents extends React.Component {
           </div>
 
           <div className="form-group">
-            <label for="dateInput"></label>
+            <label htmlFor="dateInput"></label>
             <span>Date</span>
             <DatePicker
               selected={this.state.date}
@@ -109,7 +105,7 @@ class createEvents extends React.Component {
           </div>
 
           <div className="form-group">
-            <label for="timeInput"></label>
+            <label htmlFor="timeInput"></label>
             <span>Time</span>
             <input
               type="time"
@@ -122,7 +118,7 @@ class createEvents extends React.Component {
           </div>
 
           <div className="form-group">
-            <label for="priceInput"></label>
+            <label htmlFor="priceInput"></label>
             <span>Price</span>
             <input
               type="price"
@@ -135,7 +131,7 @@ class createEvents extends React.Component {
           </div>
 
           <div className="form-group">
-            <label for="descriptionInput"></label>
+            <label htmlFor="descriptionInput"></label>
             <span>Description</span>
             <textarea
               type="text"
@@ -148,8 +144,8 @@ class createEvents extends React.Component {
             />
           </div>
 
-          <button class="submit" onClick={this.submitForm}>
-            HYPRLINK IT
+          <button className="submit" onClick={this.submitForm}>
+            HYPRLNK IT
           </button>
         </form>
 
