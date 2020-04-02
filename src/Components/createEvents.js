@@ -10,7 +10,7 @@ import "react-datepicker/dist/react-datepicker.css";
 import hyprlink_title from "../Images/hyprlink_title2.png";
 import plus from "../Images/plus.png";
 import faces from "../Images/faces3.png";
-import database from "../firebase/firebase";
+import firebase from "../firebase/firebase";
 
 class createEvents extends React.Component {
   constructor(props) {
@@ -46,7 +46,7 @@ class createEvents extends React.Component {
   };
 
   submitForm = () => {
-    let db = database.firestore();
+    let db = firebase.firestore();
     console.log("Calling collection");
     console.log(this.state);
     console.log(typeof this.state);
