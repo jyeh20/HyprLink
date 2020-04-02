@@ -1,10 +1,10 @@
 NPM Installs:
 
-npm i firebase
-npm install material-ui/core
-npm install material-ui/icons
-npm install react-router-dom
-npm install react-datepicker
+npm i firebase <br />
+npm install material-ui/core <br />
+npm install material-ui/icons <br />
+npm install react-router-dom <br />
+npm install react-datepicker <br />
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
