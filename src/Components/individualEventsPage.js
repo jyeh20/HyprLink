@@ -10,6 +10,7 @@ function IndividualEventsPage() {
           const db = firebase.firestore();
           (db.collection("events").doc(window.location.pathname.slice(7)).get().then(items => {
           const docData = items.data();
+          console.log(window.location.pathname.slice(7));
           console.log(docData);
           setItems(docData);
         }));

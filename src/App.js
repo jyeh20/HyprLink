@@ -12,7 +12,7 @@ function App() {
         <Route path="/events" exact component={AllEventsPage} />
         <Route path="/hyprlnk" exact component={createEvents} />
         {/* <Route path="/newEvent" component={createEvents} /> */}
-        <Route path="/events/:id" component={IndividualEvents} />
+        <Route path="/event/:id" component={IndividualEvents} />
       </div>
     </Router>
   );

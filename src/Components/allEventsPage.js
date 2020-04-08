@@ -2,6 +2,7 @@ import React from 'react';
 import firebase from '../firebase/firebase';
 import {useEffect, useState} from 'react';
 import {Link} from 'react-router-dom';
+import getData from './Helpers';
 
 function AllEventsPage() {
     const [items, setItems] = useState([]);
@@ -18,15 +19,12 @@ function AllEventsPage() {
   return (
     <div>
       {items.map(item => (
+        getData(item.id, item.id.slice(0, 5)),
         <h1 key={item.id}>
-        <Link to={`/event/${item.id.slice(0, 5)}`}>{item.data().name}</Link>
+        <Link to={`/event/${item.id}`}>{<button>{item.data().name}</button>}</Link>
         </h1>
       ))}
     </div>
   );
 }
-  export default AllEventsPage;
-
-function getOrigininalId(url) {
-  
-}
+  export default AllEventsPage;  
