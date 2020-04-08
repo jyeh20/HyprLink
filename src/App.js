@@ -10,9 +10,9 @@ function App() {
     <Router>
       <div className="App">
         <Route path="/events" exact component={AllEventsPage} />
-        <Route path="/hyprlink/" exact component={createEvents} />
+        <Route path="/hyprlnk" exact component={createEvents} />
         {/* <Route path="/newEvent" component={createEvents} /> */}
-        <Route path="/event/:id" component={IndividualEvents} />
+        <Route path="/events/:id" component={IndividualEvents} />
       </div>
     </Router>
   );

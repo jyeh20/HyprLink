@@ -18,11 +18,15 @@ function AllEventsPage() {
   return (
     <div>
       {items.map(item => (
-        <h1 key={item}>
-        <Link to={`/event/${item.id}`}>{item.data().name}</Link>
+        <h1 key={item.id}>
+        <Link to={`/event/${item.id.slice(0, 5)}`}>{item.data().name}</Link>
         </h1>
       ))}
     </div>
   );
 }
   export default AllEventsPage;
+
+function getOrigininalId(url) {
+  
+}
