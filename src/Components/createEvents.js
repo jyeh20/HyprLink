@@ -11,7 +11,7 @@ import hyprlink_title from "../Images/hyprlink_title2.png";
 import plus from "../Images/plus.png";
 import faces from "../Images/faces3.png";
 import firebase from "../firebase/firebase";
-
+var newLink;
 class createEvents extends React.Component {
   constructor(props) {
     super(props);
@@ -51,6 +51,7 @@ class createEvents extends React.Component {
       .add(this.state)
       .then(function(docRef) {
         console.log("Document written with ID: ", docRef.id);
+        newLink = docRef.id;
       })
       .catch(function(error) {
         console.error("Error adding document: ", error);
@@ -58,6 +59,7 @@ class createEvents extends React.Component {
   };
 
   render() {
+    console.log(newLink);
     //add linking statement here once megan pushes
 
     return (
@@ -144,7 +146,7 @@ class createEvents extends React.Component {
             />
           </div>
 
-          <Link to={'/events'}>
+          <Link to={`/event/${newLink}`}>
           <button className="submit" onClick={this.submitForm}>
             HYPRLNK IT
           </button>
