@@ -313,3 +313,57 @@ button:hover {
   /* color: transparent; */
   height: auto;
 }
+
+#date {
+  margin-top: 20px;
+  padding: 0.5em;
+  font-weight: lighter;
+  color: #8f68c9;
+  font-size: 15px;
+  border-top: 1px solid #3d4254;
+  border-bottom: 1px solid #3d4254;
+  text-align: center;
+  font-family: "Varela", sans-serif;
+  margin-bottom: 0px;
+}
+
+#name {
+  color: #82bbe4;
+  font-size: 40px;
+  border-bottom: 1px solid #3d4254;
+  margin: 0px 0px 0px 0px;
+  text-align: center;
+  font-family: "Varela", sans-serif;
+}
+
+#place {
+  color: #82bbe4;
+  padding: 0.125em;
+  font-size: 17px;
+  border-bottom: 1px solid #3d4254;
+  margin: 0px 0px 0px 0px;
+  text-align: center;
+  font-family: "Varela", sans-serif;
+}
+
+#about {
+  padding-top: 0px;
+  font-weight: lighter;
+  color: #3d4254;
+  font-size: 15px;
+  text-align: left;
+  margin-bottom: 0px;
+  border: none;
+}
+
+#description {
+  font-weight: lighter;
+  color: white;
+  font-size: 20px;
+  text-align: left;
+  height: 200px;
+  padding-bottom: 2px;
+  margin-top: -3px;
+  margin-bottom: 0px;
+  border-bottom: 1px solid #3d4254;
+}

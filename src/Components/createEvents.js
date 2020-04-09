@@ -15,9 +15,7 @@ class createEvents extends React.Component {
       startTime: "00:00",
       endTime: "00:00",
       date: new Date(),
-      price: "0",
       description: "",
-      toContact: false,
       rows: 1,
       minRows: 1,
       maxRows: 2,
@@ -50,6 +48,7 @@ class createEvents extends React.Component {
       rows: currentRows < maxRows ? currentRows : maxRows,
     });
   };
+
   handleLocationChange = (e) => {
     this.setState({ location: e.target.value });
   };
@@ -62,9 +61,7 @@ class createEvents extends React.Component {
   handleDateChange = (e) => {
     this.setState({ date: e.target.value });
   };
-  handlePriceChange = (e) => {
-    this.setState({ price: e.target.value });
-  };
+
   handleDescriptionChange = (e) => {
     const textareaLineHeight = 19;
     const { minRows_1, maxRows_1 } = this.state;
