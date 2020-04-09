@@ -1,174 +1,231 @@
-@import url("https://fonts.googleapis.com/css?family=Montserrat&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Varela&display=swap");
 
 body {
-  padding-top: 5vh;
   background-size: cover;
   background-image: url("../Images/party2.jpg") !important;
   background-repeat: no-repeat;
   background-attachment: fixed;
-}
-
-#title {
-  max-width: 350px;
-  margin-top: -40px;
-  margin-bottom: 10px;
-  margin-left: 45px;
-}
-
-h2 {
-  width: 400px;
-  text-align: left;
-  font-size: larger;
-  font-weight: lighter;
-  color: #3d4254;
-  padding-left: 0.5em;
-  padding-bottom: 0.25em;
-  margin-left: -55px;
-  margin-right: 70px;
-  margin-bottom: 5px;
-  margin-top: 5px;
-  border-bottom: 1px solid #3d4254;
-  font-family: "Montserrat", sans-serif;
-}
-
-#plus {
-  max-width: 50px;
-  margin-bottom: -30px;
-  margin-top: 40px;
-  margin-left: -415px;
-  margin-right: 415px;
-  /* -webkit-box-shadow: 5x -5px rgba(0, 0, 0, 0.6);
-  -o-box-shadow: 5px -5px rgba(0, 0, 0, 0.6); */
-  border-radius: 100px;
-}
-
-span {
-  position: relative;
-  color: #4389a2;
-  text-align: left;
-  margin-right: 600px;
-  margin-left: -30px;
-  color: #3d4254;
-  text-transform: capitalize;
-  margin-top: 100px;
-  font-weight: lighter;
-  padding-top: 10px;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Varela", sans-serif;
 }
 
 form {
   vertical-align: middle;
-  min-width: 200px;
-  max-width: 300px;
-
-  padding: 0.5em 4em;
+  min-width: 250px;
+  max-width: 400px;
+  padding: 20px 20px 10px 20px;
   margin: auto;
-  border: 1px solid #121a26;
+  border: 1px solid transparent;
   border-radius: 10px;
   align-items: center;
-  background-image: linear-gradient(#121a26, #20232ff2, #121a26);
+  background-image: linear-gradient(#0a0d13b3, #20232f8c, #0a0d13b3);
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-input {
-  border: 1px solid #3d4254;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 1em;
+h2 {
+  padding-top: 10px;
+  font-weight: lighter;
+  color: #3d4254;
+  font-size: 15px;
+  border-bottom: 1px solid #3d4254;
   text-align: center;
-  font-size: large;
-  color: white;
-  background-color: transparent;
-  margin-left: 1em;
-  margin-right: 2em;
-  vertical-align: middle;
-  outline: 0;
-  padding-right: 0.5em;
-  padding-left: 0.5em;
-  border-radius: 20px;
-  min-width: 200px;
-  max-width: 300px;
-  font-family: sans-serif;
+  padding-bottom: 2px;
+  margin-bottom: 0px;
 }
 
 #nameInput {
+  /* margin-left: -40px; */
+  line-height: 30px;
+  /* background-color: #20232f8c; */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: #82bbe4;
+  font-size: 30px;
+  min-width: 99%;
+  width: 99%;
+  max-width: 99%;
+  height: 100%;
+  max-height: 100%;
+  display: block;
+  margin: 0px 0px 0px 0px;
+  text-align: center;
   background-color: transparent;
-  border: 0px;
-  background: -webkit-linear-gradient(#5c258d, #4389a2);
+  border: none;
+  font-family: "Varela", sans-serif;
+  font-style: italic;
+  padding-bottom: 10px;
+  height: auto;
+  border-bottom: 1px solid #3d4254;
+  overflow: auto;
+  resize: none;
+  padding-top: 10px;
+  /* padding: 0px 140px; */
+}
+
+#nameInput:focus {
+  background: rgba(256, 256, 256, 1);
+  font-size: 30px;
+  background-color: #20232f8c;
+  outline: none;
+  color: 148cef;
+  border-bottom: 1px solid #3d4254;
+
+  height: auto;
+}
+
+#nameInput:focus::placeholder {
+  font-size: 20px;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  text-align: center;
-  text-transform: capitalize;
-  font-weight: bold !important;
-  font-size: xx-large;
-  border-bottom: 1px solid white;
-  max-width: 600px;
-  overflow: hidden;
-  margin-left: -50px;
-  text-align: center;
-  margin-bottom: 5px;
-  padding-bottom: 0.25em;
-  border-radius: 0px;
-  border-bottom: 1px solid #3d4254;
-  text-shadow: 2px 2px 4px #0000001a;
-  font-family: "Montserrat", sans-serif;
+  /* color: transparent; */
+  height: auto;
 }
 
-::placeholder {
-  font-family: "Montserrat", sans-serif;
-  font-weight: lighter;
-  font-size: medium;
+#locationInput:focus::placeholder {
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  height: auto;
+}
+
+#locationInput {
+  font-size: 19px;
+  /* margin-left: -40px; */
+  background-color: #20232f8c;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: white;
+
+  min-width: 97%;
+  width: 97%;
+  max-width: 97%;
+  height: 30px;
+  max-height: 100%;
+  display: block;
+  margin: 0px 0px 0px 0px;
+  text-align: left;
+
+  border: none;
+  font-family: "Varela", sans-serif;
   font-style: italic;
-  margin-bottom: 200px;
+  padding-left: 10px;
+  height: auto;
+  border: 1px solid #3d4254;
+  overflow: auto;
+  /* padding: 0px 140px; */
+  margin-bottom: 10px;
 }
 
-#dateInput {
-  margin-left: 20em;
-  margin-right: 2em;
-  padding-right: 0.5em;
-  padding-left: 0.5em;
+#locationInput:focus {
+  background: rgba(256, 256, 256, 1);
+  /* font-size: 40px; */
+  background-color: #20232f8c;
+  outline: none;
+  color: white;
+  border-bottom: 1px solid #3d4254;
+  height: auto;
 }
 
-#locationInput,
+h5 {
+  position: relative;
+  text-align: left;
+  font-size: 18px;
+  color: #3d4254;
+  margin-top: 10px;
+  font-weight: lighter;
+  margin-bottom: 0px;
+  font-family: "Varela", sans-serif;
+}
+
 #timeInput {
-  margin-top: 0.2em;
-  margin-bottom: 0.5em;
-  text-align: center;
-  font-size: large;
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding-right: 0.2em;
-  padding-left: 0.2em;
-  outline: 0;
-  width: 650px;
-  border: 1px solid #3d4254;
-  margin-left: -10px;
-  font-family: "Montserrat", sans-serif;
-  border-radius: 20px;
-  background-color: transparent;
+  /* margin-top: 3px; */
+  margin-top: -200px;
+  margin-bottom: 0px;
+  min-width: 149px;
+  justify-content: "space-between";
 }
 
-#descriptionInput {
-  font-family: "Montserrat", sans-serif;
-  justify-content: center;
-  display: flex;
-  font-size: large;
-  display: flex;
-  align-items: center;
-  padding: 0.5em 2em;
-  outline: 0;
-  margin-bottom: 1em;
-  margin-top: 5px;
-  min-width: 200px;
-  max-width: 250px;
-  min-height: 25px;
-  background-color: transparent;
-  color: white;
-  border-radius: 20px;
+span {
+  font-size: 30px;
+  color: #3d4254;
+
+  font-weight: lighter;
+
+  font-family: "Varela", sans-serif;
+}
+/* Removes the clear button from date inputs */
+input[type="date"]::-webkit-clear-button {
+  display: none;
+}
+
+/* Removes the spin button */
+input[type="date"]::-webkit-inner-spin-button {
+  display: none;
+}
+
+/* Always display the drop down caret */
+input[type="date"]::-webkit-calendar-picker-indicator {
+  color: #2c3e50;
+}
+
+/* A few custom styles for date inputs */
+input[type="date"] {
+  text-align: center;
+  appearance: none;
+  -webkit-appearance: none;
+  color: #95a5a6;
+  font-family: "Helvetica", arial, sans-serif;
+  font-size: 18px;
   border: 1px solid #3d4254;
+  background: transparent;
+  width: 97%;
+  display: inline-block !important;
+  visibility: visible !important;
+  padding: 0.25em;
+  margin-bottom: 5px;
+}
+
+input[type="date"],
+focus {
+  /* font-size: 40px; */
+  background-color: transparent;
+  outline: none;
+  color: white;
+  box-shadow: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+}
+
+input[type="time"] {
+  text-align: center;
+  margin-top: -200px;
+  appearance: none;
+  -webkit-appearance: none;
+  color: #95a5a6;
+  font-family: "Helvetica", arial, sans-serif;
+  font-size: 18px;
+  border: 1px solid #3d4254;
+  background: transparent;
+  min-width: 149px;
+  width: 149px;
+  max-width: 200px;
+  visibility: visible !important;
+}
+
+input[type="time"],
+focus {
+  /* font-size: 40px; */
+  background-color: transparent;
+  outline: none;
+  color: white;
+  box-shadow: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+}
+
+input[type="time"]::-webkit-clear-button {
+  display: none;
+}
+
+/* Removes the spin button */
+input[type="time"]::-webkit-inner-spin-button {
+  display: none;
 }
 
 button {
@@ -209,7 +266,104 @@ button:hover {
   transition: all 0.4s ease 0s;
 }
 
-#smiles {
-  max-width: 130px;
+#descriptionInput {
+  /* margin-left: -40px; */
+  line-height: 19px;
+  /* background-color: #20232f8c; */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: white;
+  font-size: 19px;
+  min-width: 96%;
+  width: 96%;
+  max-width: 96%;
+  display: block;
+  margin: 0px 0px 0px 0px;
+  text-align: left;
+  background-color: transparent;
+  border: none;
+  font-family: "Varela", sans-serif;
+  padding-bottom: 10px;
+  min-height: 100px;
+  max-height: 500px;
+  border-bottom: 1px solid #3d4254;
+  overflow: auto;
+  resize: none;
+  padding-top: 10px;
+  padding-left: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #3d4254;
+  /* padding: 0px 140px; */
+}
+
+#descriptionInput:focus {
+  background: rgba(256, 256, 256, 1);
+  font-size: 19px;
+  background-color: #20232f8c;
+  outline: none;
+  color: 148cef;
+  border: 1px solid #3d4254;
+
+  height: auto;
+}
+
+#descriptionInput:focus::placeholder {
+  font-size: 20px;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  /* color: transparent; */
+  height: auto;
+}
+
+#date {
   margin-top: 20px;
+  padding: 0.5em;
+  font-weight: lighter;
+  color: #8f68c9;
+  font-size: 15px;
+  border-top: 1px solid #3d4254;
+  border-bottom: 1px solid #3d4254;
+  text-align: center;
+  font-family: "Varela", sans-serif;
+  margin-bottom: 0px;
+}
+
+#name {
+  color: #82bbe4;
+  font-size: 40px;
+  border-bottom: 1px solid #3d4254;
+  margin: 0px 0px 0px 0px;
+  text-align: center;
+  font-family: "Varela", sans-serif;
+}
+
+#place {
+  color: #82bbe4;
+  padding: 0.125em;
+  font-size: 17px;
+  border-bottom: 1px solid #3d4254;
+  margin: 0px 0px 0px 0px;
+  text-align: center;
+  font-family: "Varela", sans-serif;
+}
+
+#about {
+  padding-top: 0px;
+  font-weight: lighter;
+  color: #3d4254;
+  font-size: 15px;
+  text-align: left;
+  margin-bottom: 0px;
+  border: none;
+}
+
+#description {
+  font-weight: lighter;
+  color: white;
+  font-size: 20px;
+  text-align: left;
+  height: 200px;
+  padding-bottom: 2px;
+  margin-top: -3px;
+  margin-bottom: 0px;
+  border-bottom: 1px solid #3d4254;
 }
