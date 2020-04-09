@@ -1,10 +1,8 @@
 import React from "react";
 import DatePicker from "react-datepicker";
-import {Link} from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 import "../CSS/createEvents.css";
-
-
 
 import "react-datepicker/dist/react-datepicker.css";
 import hyprlink_title from "../Images/hyprlink_title2.png";
@@ -22,26 +20,26 @@ class createEvents extends React.Component {
       date: new Date(),
       price: "0",
       description: "",
-      toContact: false
+      toContact: false,
     };
   }
-  
-  handleNameChange = e => {
+
+  handleNameChange = (e) => {
     this.setState({ name: e.target.value });
   };
-  handleLocationChange = e => {
+  handleLocationChange = (e) => {
     this.setState({ location: e.target.value });
   };
-  handleTimeChange = e => {
+  handleTimeChange = (e) => {
     this.setState({ time: e.target.value });
   };
-  handleDateChange = e => {
+  handleDateChange = (e) => {
     this.setState({ date: e });
   };
-  handlePriceChange = e => {
+  handlePriceChange = (e) => {
     this.setState({ price: e.target.value });
   };
-  handleDescriptionChange = e => {
+  handleDescriptionChange = (e) => {
     this.setState({ description: e.target.value });
   };
 
@@ -49,10 +47,10 @@ class createEvents extends React.Component {
     let db = firebase.firestore();
     db.collection("events")
       .add(this.state)
-      .then(function(docRef) {
+      .then(function (docRef) {
         console.log("Document written with ID: ", docRef.id);
       })
-      .catch(function(error) {
+      .catch(function (error) {
         console.error("Error adding document: ", error);
       });
   };
@@ -65,7 +63,7 @@ class createEvents extends React.Component {
         <img id="title" src={hyprlink_title} alt="hyprlink"></img>
         <img id="plus" src={plus} alt="+"></img>
 
-        <form >
+        <form>
           <h2>CREATE NEW EVENT</h2>
 
           <div className="form-group">
@@ -98,7 +96,8 @@ class createEvents extends React.Component {
           <div className="form-group">
             <label htmlFor="dateInput"></label>
             <span>Date</span>
-            <DatePicker
+            <input
+              type="date"
               selected={this.state.date}
               onChange={this.handleDateChange}
             />
@@ -127,7 +126,7 @@ class createEvents extends React.Component {
               onChange={this.handlePriceChange}
               className="form-control"
               id="priceInput"
-              />
+            />
           </div>
 
           <div className="form-group">
@@ -144,10 +143,10 @@ class createEvents extends React.Component {
             />
           </div>
 
-          <Link to={'/events'}>
-          <button className="submit" onClick={this.submitForm}>
-            HYPRLNK IT
-          </button>
+          <Link to={"/events"}>
+            <button className="submit" onClick={this.submitForm}>
+              HYPRLNK IT
+            </button>
           </Link>
         </form>
 
