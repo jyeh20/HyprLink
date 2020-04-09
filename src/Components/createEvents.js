@@ -1,15 +1,16 @@
 import React from "react";
 import DatePicker from "react-datepicker";
 import { Redirect } from "react-router-dom";
+import { Textfit } from "react-textfit";
 
 import "../CSS/createEvents.css";
 
-import "react-datepicker/dist/react-datepicker.css";
 import hyprlink_title from "../Images/hyprlink_title2.png";
 import plus from "../Images/plus.png";
 import faces from "../Images/faces3.png";
 import firebase from "../firebase/firebase";
-let newLink;
+
+// let newLink;
 
 class createEvents extends React.Component {
   constructor(props) {
@@ -17,22 +18,52 @@ class createEvents extends React.Component {
     this.state = {
       name: "",
       location: "",
-      time: "00:00",
+      startTime: "00:00",
+      endTime: "00:00",
       date: new Date(),
       price: "0",
       description: "",
       toContact: false,
+      rows: 1,
+      minRows: 1,
+      maxRows: 2,
+      rows_1: 5,
+      minRows_1: 5,
+      maxRows_1: 10,
     };
   }
 
   handleNameChange = (e) => {
-    this.setState({ name: e.target.value });
+    const textareaLineHeight = 30;
+    const { minRows, maxRows } = this.state;
+
+    const previousRows = e.target.rows;
+    e.target.rows = minRows; // reset number of rows in textarea
+
+    const currentRows = ~~(e.target.scrollHeight / textareaLineHeight);
+
+    if (currentRows === previousRows) {
+      e.target.rows = currentRows;
+    }
+
+    if (currentRows >= maxRows) {
+      e.target.rows = maxRows;
+      e.target.scrollTop = e.target.scrollHeight;
+    }
+
+    this.setState({
+      name: e.target.value,
+      rows: currentRows < maxRows ? currentRows : maxRows,
+    });
   };
   handleLocationChange = (e) => {
     this.setState({ location: e.target.value });
   };
-  handleTimeChange = (e) => {
-    this.setState({ time: e.target.value });
+  handleStartTimeChange = (e) => {
+    this.setState({ startTime: e.target.value });
+  };
+  handleEndTimeChange = (e) => {
+    this.setState({ endTime: e.target.value });
   };
   handleDateChange = (e) => {
     this.setState({ date: e.target.value });
@@ -41,7 +72,27 @@ class createEvents extends React.Component {
     this.setState({ price: e.target.value });
   };
   handleDescriptionChange = (e) => {
-    this.setState({ description: e.target.value });
+    const textareaLineHeight = 19;
+    const { minRows_1, maxRows_1 } = this.state;
+
+    const previousRows_1 = e.target.rows_1;
+    e.target.rows_1 = minRows_1; // reset number of rows in textarea
+
+    const currentRows_1 = ~~(e.target.scrollHeight / textareaLineHeight);
+
+    if (currentRows_1 === previousRows_1) {
+      e.target.rows_1 = currentRows_1;
+    }
+
+    if (currentRows_1 >= maxRows_1) {
+      e.target.rows_1 = maxRows_1;
+      e.target.scrollTop = e.target.scrollHeight;
+    }
+
+    this.setState({
+      description: e.target.value,
+      rows_1: currentRows_1 < maxRows_1 ? currentRows_1 : maxRows_1,
+    });
   };
 
   submitForm = () => {
@@ -50,62 +101,61 @@ class createEvents extends React.Component {
       .add(this.state)
       .then(function (docRef) {
         console.log("Document written with ID: ", docRef.id);
-        newLink = docRef.id;
-        console.log(newLink);
-        console.log(typeof(newLink));
+        // newLink = docRef.id;
+        // console.log(newLink);
+        // console.log(typeof(newLink));
       })
       .catch(function (error) {
         console.error("Error adding document: ", error);
       });
-      
-
   };
 
   render() {
-    //add linking statement here once megan pushes
+    const contentStyle = {
+      paddingTop: 40 + 20,
+      paddingRight: 20,
+      paddingLeft: 20,
+    };
+
     // if (newLink == String) {
     //   return <Redirect to={`/event/${newLink}`} />
     // }
 
-    
     return (
-      <div>
-        <img id="title" src={hyprlink_title} alt="hyprlink"></img>
-        <img id="plus" src={plus} alt="+"></img>
-
+      <div style={contentStyle}>
         <form>
-          <h2>CREATE NEW EVENT</h2>
+          <h2>+ CREATE NEW EVENT</h2>
 
-          <div className="form-group">
-            <label htmlFor="nameInput"></label>
-            <input
-              type="text"
+          <div className="name-group">
+            <label htmlFor="name"></label>
+            <textarea
+              rows={this.state.rows}
               name="name"
               value={this.state.name}
               onChange={this.handleNameChange}
-              className="form-control"
               id="nameInput"
-              placeholder="ENTER EVENT NAME"
+              placeholder="Enter Event Name..."
+              autocomplete="off"
             />
           </div>
 
-          <div className="form-group">
+          <div className="location-group">
             <label htmlFor="locationInput"></label>
-            <span>Location</span>
+            <h5>Location</h5>
             <input
               type="text"
               name="location"
               value={this.state.location}
               onChange={this.handleLocationChange}
-              className="form-control"
               id="locationInput"
-              placeholder="Address or link"
+              placeholder="Address or call link"
+              autocomplete="off"
             />
           </div>
 
-          <div className="form-group">
+          <div className="date-group">
             <label htmlFor="dateInput"></label>
-            <span>Date</span>
+            <h5>Date</h5>
             <input
               type="date"
               selected={this.state.date}
@@ -113,54 +163,47 @@ class createEvents extends React.Component {
             />
           </div>
 
-          <div className="form-group">
+          <div className="time-group">
             <label htmlFor="timeInput"></label>
-            <span>Time</span>
+            <h5>Time</h5>
             <input
               type="time"
-              name="time"
-              value={this.state.time}
-              onChange={this.handleTimeChange}
-              className="form-control"
+              name="startTime"
+              value={this.state.startTime}
+              onChange={this.handleStartTimeChange}
+              id="timeInput"
+            />
+            <span> - </span>
+            <input
+              type="time"
+              name="endTime"
+              value={this.state.endTime}
+              onChange={this.handleEndTimeChange}
               id="timeInput"
             />
           </div>
 
-          <div className="form-group">
-            <label htmlFor="priceInput"></label>
-            <span>Price</span>
-            <input
-              type="price"
-              name="price"
-              value={this.state.price}
-              onChange={this.handlePriceChange}
-              className="form-control"
-              id="priceInput"
-            />
-          </div>
-
-          <div className="form-group">
+          <div className="description-group">
             <label htmlFor="descriptionInput"></label>
-            <span>Description</span>
+            <h5>Description</h5>
             <textarea
+              rows_1={this.state.rows_1}
               type="text"
               name="description"
               value={this.state.description}
               onChange={this.handleDescriptionChange}
-              className="form-control"
               id="descriptionInput"
               placeholder="Write about this event"
+              autocomplete="off"
             />
           </div>
 
-            <button className="submit" onClick={this.submitForm}>
-              HYPRLNK IT
-            </button>
-            
+          <button className="submit" onClick={this.submitForm}>
+            HYPRLINK IT
+          </button>
         </form>
-        
 
-        <img id="smiles" src={faces} alt="smiles"></img>
+        {/* <img id="smiles" src={faces} alt="smiles"></img> */}
       </div>
     );
   }
