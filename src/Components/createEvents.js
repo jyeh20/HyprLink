@@ -1,6 +1,5 @@
 import React from "react";
-import DatePicker from "react-datepicker";
-import { Redirect } from "react-router-dom";
+import { Redirect, Link } from "react-router-dom";
 
 import "../CSS/createEvents.css";
 
@@ -9,7 +8,9 @@ import hyprlink_title from "../Images/hyprlink_title2.png";
 import plus from "../Images/plus.png";
 import faces from "../Images/faces3.png";
 import firebase from "../firebase/firebase";
-let newLink;
+
+let db = firebase.firestore();
+let newDocRef;
 
 class createEvents extends React.Component {
   constructor(props) {
@@ -21,12 +22,12 @@ class createEvents extends React.Component {
       date: new Date(),
       price: "0",
       description: "",
-      toContact: false,
     };
   }
 
   handleNameChange = (e) => {
     this.setState({ name: e.target.value });
+    
   };
   handleLocationChange = (e) => {
     this.setState({ location: e.target.value });
@@ -45,28 +46,59 @@ class createEvents extends React.Component {
   };
 
   submitForm = () => {
-    let db = firebase.firestore();
-    db.collection("events")
-      .add(this.state)
-      .then(function (docRef) {
-        console.log("Document written with ID: ", docRef.id);
-        newLink = docRef.id;
-        console.log(newLink);
-        console.log(typeof(newLink));
-      })
-      .catch(function (error) {
-        console.error("Error adding document: ", error);
-      });
+  
+    db.collection("events").doc();
+    newDocRef = db.collection("events").doc();
+    newDocRef.set(this.state);
+    const newLink = newDocRef.id;
+    console.log(newLink);
+    const redirect = `/events/${newLink}`;
+    console.log(redirect);
+    newDocRef.update({
+      newLink: newLink,
+      redirect: redirect,
+      toContact: true
+    })
+    .then(function() {
+      console.log("Document successfully updated!");
+    })
+    .catch(function(error) {
+        // The document probably doesn't exist.
+        console.error("Error updating document: ", error);
+    });
+    console.log(newDocRef);
+
+    // db.collection("events")
+    //   .add(this.state)
+    //   .then(function (docRef) {
+    //     console.log("Document written with ID: ", docRef.id);
+    //     newLink = docRef.id;
+    //     this.setState({redirect: `/events/${newLink}`});
+    //     let newDoc = db.collection("events").doc(newLink);
+    //     newDoc.update({
+    //       redirect: newLink
+    //     })
+    //     .then(function() {
+    //       console.log("Document successfully updated.");
+    //       this.setState({toContact: true}); 
+    //     })
+    //     .catch(function(error) {
+    //       console.error("Error updating doccument: ", error);
+    //     })
+    //       })
+    //   .catch(function (error) {
+    //     console.error("Error adding document: ", error);
+    //   });
+
+    
       
-
   };
-
+  
   render() {
-    //add linking statement here once megan pushes
-    // if (newLink == String) {
-    //   return <Redirect to={`/event/${newLink}`} />
+    // if (this.state.toContact === true) {
+    //   return <Redirect to={newDocRef.redirect} />
     // }
-
+    //add linking statement here once megan pushes
     
     return (
       <div>
@@ -80,7 +112,7 @@ class createEvents extends React.Component {
             <label htmlFor="nameInput"></label>
             <input
               type="text"
-              name="name"
+              // name="name"
               value={this.state.name}
               onChange={this.handleNameChange}
               className="form-control"
@@ -94,7 +126,7 @@ class createEvents extends React.Component {
             <span>Location</span>
             <input
               type="text"
-              name="location"
+              // name="location"
               value={this.state.location}
               onChange={this.handleLocationChange}
               className="form-control"
@@ -118,7 +150,7 @@ class createEvents extends React.Component {
             <span>Time</span>
             <input
               type="time"
-              name="time"
+              // name="time"
               value={this.state.time}
               onChange={this.handleTimeChange}
               className="form-control"
@@ -131,7 +163,7 @@ class createEvents extends React.Component {
             <span>Price</span>
             <input
               type="price"
-              name="price"
+              // name="price"
               value={this.state.price}
               onChange={this.handlePriceChange}
               className="form-control"
@@ -144,7 +176,7 @@ class createEvents extends React.Component {
             <span>Description</span>
             <textarea
               type="text"
-              name="description"
+              // name="description"
               value={this.state.description}
               onChange={this.handleDescriptionChange}
               className="form-control"
@@ -153,17 +185,20 @@ class createEvents extends React.Component {
             />
           </div>
 
-            <button className="submit" onClick={this.submitForm}>
+            <button
+            className="submit" 
+            onClick={this.submitForm}>
               HYPRLNK IT
             </button>
-            
+
+          
         </form>
         
 
         <img id="smiles" src={faces} alt="smiles"></img>
       </div>
-    );
+      
+    )};
   }
-}
 
 export default createEvents;

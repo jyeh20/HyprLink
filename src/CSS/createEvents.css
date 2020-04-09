@@ -37,8 +37,8 @@ h2 {
   margin-top: 40px;
   margin-left: -415px;
   margin-right: 415px;
-  -webkit-box-shadow: 5x -5px rgba(0, 0, 0, 0.6);
-  -o-box-shadow: 5px -5px rgba(0, 0, 0, 0.6);
+  /* -webkit-box-shadow: 5x -5px rgba(0, 0, 0, 0.6);
+  -o-box-shadow: 5px -5px rgba(0, 0, 0, 0.6); */
   border-radius: 100px;
 }
 
