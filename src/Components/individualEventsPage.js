@@ -2,10 +2,14 @@ import React from "react";
 import firebase from "../firebase/firebase";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import hyprlink_title from "../Images/hyprlink_title2.png";
-import faces from "../Images/faces3.png";
 
 function IndividualEventsPage() {
+  const contentStyle = {
+    paddingTop: 40 + 20,
+    paddingRight: 20,
+    paddingLeft: 20,
+  };
+
   const [items, setItems] = useState([]);
 
   useEffect(() => {
@@ -23,16 +27,37 @@ function IndividualEventsPage() {
 
   console.log(items);
   return (
-    <div>
-      <h1>{items.name}</h1>
-      <h3>{items.location}</h3>
-      <h3>{items.date}</h3>
-      <h3>{items.time}</h3>
-      <h3>{items.price}</h3>
-      <h3>{items.description}</h3>
-      <h3>
-        <Link to={window.location.pathname}>{window.location.href}</Link>
-      </h3>
+    <div style={contentStyle}>
+      <form>
+        <h2>+ CREATE NEW EVENT</h2>
+
+        <div className="date-group">
+          <label htmlFor="dateInput"></label>
+          <h5>{items.date}</h5>
+          <label htmlFor="timeInput"></label>
+          <h5>{items.startTime}</h5>
+          <span> - </span>
+          <h5>{items.endTime}</h5>
+        </div>
+
+        <div className="name-group">
+          <label htmlFor="name"></label>
+          <h5>{items.name}</h5>
+        </div>
+
+        <div className="location-group">
+          <label htmlFor="locationInput"></label>
+          <h5>{items.location}</h5>
+        </div>
+
+        <div className="description-group">
+          <label htmlFor="descriptionInput"></label>
+          <h5>{items.description}</h5>
+        </div>
+        <h3>
+          <Link to={window.location.pathname}>{window.location.href}</Link>
+        </h3>
+      </form>
     </div>
   );
 }

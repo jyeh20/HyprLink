@@ -1,13 +1,7 @@
 import React from "react";
-import DatePicker from "react-datepicker";
-import { Redirect } from "react-router-dom";
-import { Textfit } from "react-textfit";
 
 import "../CSS/createEvents.css";
 
-import hyprlink_title from "../Images/hyprlink_title2.png";
-import plus from "../Images/plus.png";
-import faces from "../Images/faces3.png";
 import firebase from "../firebase/firebase";
 
 // let newLink;
@@ -135,7 +129,7 @@ class createEvents extends React.Component {
               onChange={this.handleNameChange}
               id="nameInput"
               placeholder="Enter Event Name..."
-              autocomplete="off"
+              autoComplete="off"
             />
           </div>
 
@@ -149,7 +143,7 @@ class createEvents extends React.Component {
               onChange={this.handleLocationChange}
               id="locationInput"
               placeholder="Address or call link"
-              autocomplete="off"
+              autoComplete="off"
             />
           </div>
 
@@ -194,7 +188,7 @@ class createEvents extends React.Component {
               onChange={this.handleDescriptionChange}
               id="descriptionInput"
               placeholder="Write about this event"
-              autocomplete="off"
+              autoComplete="off"
             />
           </div>
 
