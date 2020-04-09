@@ -1,6 +1,6 @@
 import React from "react";
 import DatePicker from "react-datepicker";
-
+import {Link} from 'react-router-dom';
 
 import "../CSS/createEvents.css";
 
@@ -144,9 +144,11 @@ class createEvents extends React.Component {
             />
           </div>
 
+          <Link to={'/events'}>
           <button className="submit" onClick={this.submitForm}>
             HYPRLNK IT
           </button>
+          </Link>
         </form>
 
         <img id="smiles" src={faces} alt="smiles"></img>
