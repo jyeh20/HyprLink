@@ -3,6 +3,7 @@ import AllEventsPage from "./Components/allEventsPage";
 import createEvents from "./Components/createEvents";
 import IndividualEventsPage from "./Components/individualEventsPage";
 import TopBar from "./Components/TopBar";
+import ExtenderApp from "./Components/ExtenderApp"
 import "./App.css";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
