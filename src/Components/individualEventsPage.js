@@ -1,15 +1,17 @@
 import React from "react";
 import firebase from "../firebase/firebase";
-import { useEffect, useState } from "react";
+import { useRef, useEffect, useState } from "react";
 import "../CSS/createEvents.css";
 import "../CSS/shareableIcons.css";
 import { useClipboard } from "use-clipboard-copy";
 import ExtenderApp from "./ExtenderApp";
 
-function IndividualEventsPage() {
-  const clipboard = useClipboard({ copiedTimeout: 750 });
+export default function IndividualEventsPage() {
+  const [copySuccess, setCopySuccess] = useState("", "");
+  const textAreaRef = useRef(null);
+
   const contentStyle = {
-    paddingTop: 40 + 20,
+    paddingTop: 40,
     paddingRight: 20,
     paddingLeft: 20,
   };
@@ -31,6 +33,16 @@ function IndividualEventsPage() {
         setItems(docData);
       });
   }, []);
+
+  function copyToClipboard(e) {
+    textAreaRef.current.select();
+    document.execCommand("copy");
+    // This is just personal preference.
+    // I prefer to not show the the whole text area selected.
+    e.target.focus();
+    e.preventDefault();
+    setCopySuccess("✅");
+  }
 
   console.log(items);
 
@@ -76,7 +88,7 @@ function IndividualEventsPage() {
 
         <div className="location-group">
           <label htmlFor="locationInput"></label>
-          <h5 id="place"> 📍{items.location}</h5>
+          <h5 id="place">📍{items.location}</h5>
         </div>
 
         <div className="description-group">
@@ -92,12 +104,12 @@ function IndividualEventsPage() {
           🔗
           <input
             id="link"
-            ref={clipboard.target}
+            ref={textAreaRef}
             value={window.location.href}
             readOnly
           />
-          <button id="iconButton" onClick={clipboard.copy}>
-            {clipboard.copied ? "✅" : "📋"}
+          <button id="iconButton" onClick={copyToClipboard}>
+            {copySuccess == "" ? "📋" : "✅"}
           </button>
         </div>
 
@@ -111,4 +123,3 @@ function IndividualEventsPage() {
     </div>
   );
 }
-export default IndividualEventsPage;

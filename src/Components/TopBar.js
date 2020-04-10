@@ -1,7 +1,7 @@
 import React from "react";
 import hyprlink_title from "../Images/hyprlink_title2.png";
 import faces from "../Images/faces3.png";
-
+import start from "../Images/start.png";
 import phrase from "../Images/phrase.png";
 import { Link } from "react-router-dom";
 
@@ -29,6 +29,7 @@ const TopBar = ({ styles }) => {
   const imageStyle = {
     top: 15,
     display: "flex",
+    marginTop: "10px",
     marginLeft: "10px",
     alignItems: "center",
     width: "0px 20px",
@@ -38,6 +39,7 @@ const TopBar = ({ styles }) => {
 
   const titleStyle = {
     top: 10,
+    marginTop: "10px",
     marginLeft: "-90px",
     display: "flex",
     justifyContent: "center",
@@ -51,7 +53,7 @@ const TopBar = ({ styles }) => {
   };
 
   const phraseStyle = {
-    marginTop: "-5px",
+    marginTop: "5px",
     width: "0px 20px",
     marginLeft: "-115px",
     display: "flex",
@@ -59,6 +61,19 @@ const TopBar = ({ styles }) => {
     alignItems: "center",
 
     height: styles.topBarHeight - 20,
+
+    padding: "0px 0px",
+  };
+  const startStyle = {
+    marginTop: "5px",
+    width: "0px 5px",
+    marginLeft: "-140px",
+    // marginRight: "10px",
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center",
+
+    height: styles.topBarHeight - 36,
 
     padding: "0px 0px",
   };
@@ -78,12 +93,20 @@ const TopBar = ({ styles }) => {
 
       <Link to="/events">
         <img
+          style={startStyle}
+          id="start"
+          src={start}
+          alt="+ Start New Link!"
+        ></img>
+      </Link>
+      {/* <Link to="/events">
+        <img
           style={phraseStyle}
           id="phrase"
           src={phrase}
           alt="LET'S LINK UP!"
         ></img>
-      </Link>
+      </Link> */}
     </div>
   );
 };
