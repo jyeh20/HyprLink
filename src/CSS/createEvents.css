@@ -250,7 +250,6 @@ input[type="time"] {
   position: relative;
   visibility: visible !important;
   min-height: 2.5rem;
-  width: 95%;
   padding: 0px;
   padding-left: 4px;
 }
@@ -352,7 +351,7 @@ textarea:focus {
   padding-top: 5px;
   padding-bottom: 5px;
   max-width: 192px;
-  min-width: 10px;
+  min-width: 50px;
   border-left: 1px solid transparent;
   position: relative;
 }
@@ -362,7 +361,7 @@ textarea:focus {
   padding-bottom: 5px;
   min-inline-size: 0%;
   max-width: 192px;
-  min-width: 10px;
+  min-width: 50px;
   border-right: 1px solid transparent;
 }
 #descriptionInput {
