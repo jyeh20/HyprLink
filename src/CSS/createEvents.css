@@ -252,6 +252,7 @@ input[type="time"] {
   min-height: 2.5rem;
   padding: 0px;
   padding-left: 4px;
+  width: 50%;
 }
 textarea {
   -webkit-appearance: none;
