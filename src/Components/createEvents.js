@@ -109,7 +109,7 @@ class createEvents extends React.Component {
     newDocRef.set(this.state);
     const newLink = newDocRef.id;
     console.log(newLink);
-    director = `hyprlink/event/${newLink}`;
+    director = `/hyprlink/event/${newLink}`;
     toContact = true
     console.log(director);
     console.log(toContact);
