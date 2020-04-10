@@ -48,6 +48,7 @@ class App extends Component {
         <div className="App">
           <Route path="/events" exact component={AllEventsPage} />
           <Route path="/hyprlink" exact component={createEvents} />
+          {/*DONT CHANGE, WORKS FOR LOCAL AND GITHUB*/}
           {/* <Route path="/newEvent" component={createEvents} /> */}
           <Route path="/event/:id" component={IndividualEventsPage} />
           {/*DONT CHANGE, WORKS FOR LOCAL AND GITHUB*/}
