@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import AllEventsPage from "./Components/allEventsPage";
 import createEvents from "./Components/createEvents";
-import IndividualEvents from "./Components/individualEventsPage";
+import IndividualEventsPage from "./Components/individualEventsPage";
 import TopBar from "./Components/TopBar";
 import "./App.css";
 import { BrowserRouter as Router, Route } from "react-router-dom";
@@ -48,7 +48,7 @@ class App extends Component {
           <Route path="/hyprlink/events" exact component={AllEventsPage} />
           <Route path="/hyprlink" exact component={createEvents} />
           {/* <Route path="/newEvent" component={createEvents} /> */}
-          <Route path="/hyprlink/event/:id" component={IndividualEvents} />
+          <Route path="/event/:id" component={IndividualEventsPage} />
         </div>
       </Router>
     );
