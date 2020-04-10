@@ -18,13 +18,13 @@ import {
   
 } from "react-share";
 
-import "../CSS/createEvents.css";
+import "../CSS/shareableIcons.css";
 
 
 class ExtenderApp extends Component {
   render() {
-    const shareUrl = 'https://jyeh20.github.io/hyprlink/';
-    const title = 'GitHub';
+    const shareUrl = window.location.href;
+    const title = 'I am attending, we should link up at: : ';
 
     return (
       <div className="Demo__container">
@@ -35,7 +35,7 @@ class ExtenderApp extends Component {
             title={title}
             className="Demo__some-network__share-button"
           >
-            <TwitterIcon size={32} round />
+            <TwitterIcon size={20} round />
           </TwitterShareButton>
 
           <div className="Demo__some-network__share-count">&nbsp;</div>
@@ -48,7 +48,7 @@ class ExtenderApp extends Component {
             separator=":: "
             className="Demo__some-network__share-button"
           >
-            <WhatsappIcon size={32} round />
+            <WhatsappIcon size={20} round />
           </WhatsappShareButton>
 
           <div className="Demo__some-network__share-count">&nbsp;</div>
@@ -56,7 +56,7 @@ class ExtenderApp extends Component {
 
         <div className="Demo__some-network">
           <LinkedinShareButton url={shareUrl} className="Demo__some-network__share-button">
-            <LinkedinIcon size={32} round />
+            <LinkedinIcon size={20} round />
           </LinkedinShareButton>
         </div>
         <div className="Demo__some-network">
@@ -65,7 +65,7 @@ class ExtenderApp extends Component {
             quote={title}
             className="Demo__some-network__share-button"
           >
-            <FacebookIcon size={32} round />
+            <FacebookIcon size={20} round />
           </FacebookShareButton>
 
         </div>
@@ -77,7 +77,7 @@ class ExtenderApp extends Component {
             windowHeight={460}
             className="Demo__some-network__share-button"
           >
-            <RedditIcon size={32} round />
+            <RedditIcon size={20} round />
           </RedditShareButton>
 
           
@@ -89,7 +89,7 @@ class ExtenderApp extends Component {
             body="body"
             className="Demo__some-network__share-button"
           >
-            <EmailIcon size={32} round />
+            <EmailIcon size={20} round />
           </EmailShareButton>
         </div>
 
@@ -99,7 +99,7 @@ class ExtenderApp extends Component {
             appId="521270401588372"
             className="Demo__some-network__share-button"
           >
-            <FacebookMessengerIcon size={32} round />
+            <FacebookMessengerIcon size={20} round />
           </FacebookMessengerShareButton>
         </div>
       </div>
