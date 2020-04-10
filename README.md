@@ -4,7 +4,7 @@ npm i firebase <br />
 npm install material-ui/core <br />
 npm install material-ui/icons <br />
 npm install react-router-dom <br />
-npm install react-datepicker <br />
+npm install --save use-clipboard-copy <br />
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
