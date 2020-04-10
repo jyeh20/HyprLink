@@ -115,6 +115,7 @@ class createEvents extends React.Component {
       .update({
         newLink: newLink,
         director: director,
+        date: this.state.date+"T00:00:00"
       })
       .then(function () {
         console.log("Document successfully updated!");

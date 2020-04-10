@@ -21,7 +21,7 @@ function AllEventsPage() {
       {items.map(item => (
         getData(item.id, item.id.slice(0, 5)),
         <h1 key={item.id}>
-        <Link to={`/event/${item.id}`}>{<button>{item.data().name}</button>}</Link>
+        <Link to={`/event/${item.id}`}>{<button id="submitButton" className="submit">{item.data().name}</button>}</Link>
       {/*/DONT CHANGE, WORKS FOR LOCAL AND GITHUB*/}
         </h1>
       ))}

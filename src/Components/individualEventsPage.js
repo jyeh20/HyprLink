@@ -47,6 +47,7 @@ export default function IndividualEventsPage() {
   console.log(items);
 
   return (
+    console.log(items.date),
     <div style={contentStyle}>
       <form id="headerGroup">
         <h2 id="timeHeaderText">
@@ -78,6 +79,9 @@ export default function IndividualEventsPage() {
             hour12: true,
           })}
         </h2>
+        {console.log(items.date)}
+        {console.log(new Date(items.date))}
+        {console.log(new Date(items.date).toDateString())}
         <h2 id="dateHeaderText">{new Date(items.date).toDateString()}</h2>
       </form>
       <form id="detailsForm">
