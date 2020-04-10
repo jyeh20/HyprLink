@@ -47,9 +47,6 @@ export default function IndividualEventsPage() {
   console.log(items);
 
   return (
-    <meta meta name="viewport" content=  
-    "width=device-width, user-scalable=no" /> 
-
     <div style={contentStyle}>
       <form id="headerGroup">
         <h2 id="timeHeaderText">
