@@ -106,6 +106,7 @@ class createEvents extends React.Component {
     const newLink = newDocRef.id;
     console.log(newLink);
     director = `/event/${newLink}`;
+    //DONT CHANGE, WORKS FOR LOCAL AND GITHUB
     console.log(director);
     console.log(director);
 
