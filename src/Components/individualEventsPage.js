@@ -35,11 +35,37 @@ function IndividualEventsPage() {
         <div className="date-group">
           <label htmlFor="dateInput"></label>
           {/* <h5 id="date">Mon, Apr 20, 2020 ~ 4:20 PM - 9:20 PM</h5> */}
-          <h5 id="date">{new Date(items.date).toDateString()}</h5>
+          <h5 id="date">
+            {new Date(items.date).toDateString()} ~{" "}
+            {new Date(
+              0,
+              0,
+              0,
+              new String(items.startTime).slice(0, 2),
+              new String(items.startTime).slice(3, 5),
+              0,
+              0
+            ).toLocaleString("en-US", {
+              hour: "numeric",
+              minute: "numeric",
+              hour12: true,
+            })}{" "}
+            -{" "}
+            {new Date(
+              0,
+              0,
+              0,
+              new String(items.endTime).slice(0, 2),
+              new String(items.endTime).slice(3, 5),
+              0,
+              0
+            ).toLocaleString("en-US", {
+              hour: "numeric",
+              minute: "numeric",
+              hour12: true,
+            })}
+          </h5>
           <label htmlFor="timeInput"></label>
-          <h5>{items.startTime}</h5>
-
-          <h5>{items.endTime}</h5>
         </div>
 
         <div className="name-group">
@@ -51,7 +77,7 @@ function IndividualEventsPage() {
         <div className="location-group">
           <label htmlFor="locationInput"></label>
           {/* <h5 id="place">@ www.zoom.com/420</h5> */}
-          <h5 id="place">{items.location}</h5>
+          <h5 id="place"> @ {items.location}</h5>
         </div>
 
         <div className="description-group">
