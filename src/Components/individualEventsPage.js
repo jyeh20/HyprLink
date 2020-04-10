@@ -33,30 +33,31 @@ function IndividualEventsPage() {
       <form>
         <div className="date-group">
           <label htmlFor="dateInput"></label>
-          <h5 id="date">Mon, Apr 20, 2020 ~ 4:20 PM - 9:20 PM</h5>
-          {/* <h5>{items.date}</h5> */}
+          {/* <h5 id="date">Mon, Apr 20, 2020 ~ 4:20 PM - 9:20 PM</h5> */}
+          <h5 id="date">{items.date}</h5>
           <label htmlFor="timeInput"></label>
-          {/* <h5>{items.startTime}</h5> */}
+          <h5>{items.startTime}</h5>
 
-          {/* <h5>{items.endTime}</h5> */}
+          <h5>{items.endTime}</h5>
         </div>
 
         <div className="name-group">
           <label htmlFor="name"></label>
-          <h5 id="name">420 Zoom Meet</h5>
-          {/* <h5>{items.name}</h5> */}
+          {/* <h5 id="name">420 Zoom Meet</h5> */}
+          <h5 id="name">{items.name}</h5>
         </div>
 
         <div className="location-group">
           <label htmlFor="locationInput"></label>
-          <h5 id="place">@ www.zoom.com/420</h5>
-          {/* <h5>{items.location}</h5> */}
+          {/* <h5 id="place">@ www.zoom.com/420</h5> */}
+          <h5 id="place">{items.location}</h5>
         </div>
 
         <div className="description-group">
           <label htmlFor="descriptionInput"></label>
           <h2 id="about">About this event:</h2>
-          <h5 id="description">420 blaze it mfs</h5>
+          {/* <h5 id="description">420 blaze it mfs</h5> */}
+          <h5 id="description">{items.description}</h5>
         </div>
 
         <div className="link-group">
