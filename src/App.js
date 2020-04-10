@@ -34,12 +34,15 @@ class App extends Component {
   }
 
   render() {
+    const { windowWidth } = this.state;
+
     const styles = {
       white: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
+      off_black: (opacity = 1) => `rgba(10, 13, 19, ${opacity})`,
       black: (opacity = 1) => `rgba(0, 0, 0, ${opacity})`,
       purple: (opacity = 1) => `rgba(48, 45, 76, ${opacity})`,
 
-      topBarHeight: 60,
+      topBarHeight: 48,
     };
 
     return (

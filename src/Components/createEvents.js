@@ -70,7 +70,7 @@ class createEvents extends React.Component {
   };
 
   handleDescriptionChange = (e) => {
-    const textareaLineHeight = 19;
+    const textareaLineHeight = 14;
     const { minRows_1, maxRows_1 } = this.state;
 
     const previousRows_1 = e.target.rows_1;
@@ -137,9 +137,10 @@ class createEvents extends React.Component {
 
     return (
       <div style={contentStyle}>
-        <form>
-          <h2>+ CREATE NEW EVENT</h2>
-
+        <form id="headerGroup">
+          <h2 id="headerText">+ CREATE NEW EVENT</h2>
+        </form>
+        <form id="mainGroup">
           <div className="name-group">
             <label htmlFor="name"></label>
             <textarea
@@ -147,62 +148,65 @@ class createEvents extends React.Component {
               value={this.state.name}
               onChange={this.handleNameChange}
               id="nameInput"
-              placeholder="Enter Event Name..."
+              placeholder="Add a title"
               autoComplete="off"
             />
           </div>
 
           <div className="location-group">
             <label htmlFor="locationInput"></label>
-            <h5>Location</h5>
+            {/* <h5>Location</h5> */}
             <input
               type="text"
               value={this.state.location}
               onChange={this.handleLocationChange}
               id="locationInput"
-              placeholder="Address or call link"
+              placeholder="Address (e.g. 143 Street, www.zoom.com/yourmeeting)"
               autoComplete="off"
             />
           </div>
 
           <div className="date-group">
             <label htmlFor="dateInput"></label>
-            <h5>Date</h5>
+            {/* <h5>Date</h5> */}
             <input
               type="date"
-              selected={this.state.date}
+              value={this.state.date}
               onChange={this.handleDateChange}
             />
           </div>
 
           <div className="time-group">
             <label htmlFor="timeInput"></label>
-            <h5>Time</h5>
+            {/* <h5>Time</h5> */}
             <input
+              class="is-floated"
               type="time"
               value={this.state.startTime}
               onChange={this.handleStartTimeChange}
-              id="timeInput"
+              id="startTime"
             />
-            <span> - </span>
+            <span id="dash"> - </span>
+
             <input
+              class="is-floated"
               type="time"
               value={this.state.endTime}
               onChange={this.handleEndTimeChange}
-              id="timeInput"
+              id="endTime"
             />
           </div>
 
           <div className="description-group">
             <label htmlFor="descriptionInput"></label>
-            <h5>Description</h5>
+            {/* <h5>Description</h5> */}
             <textarea
               rows_1={this.state.rows_1}
               type="text"
               value={this.state.description}
               onChange={this.handleDescriptionChange}
               id="descriptionInput"
-              placeholder="Write about this event"
+              placeholder="Tell us more about your event!"
               autoComplete="off"
             />
           </div>

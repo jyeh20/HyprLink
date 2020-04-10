@@ -35,7 +35,7 @@ function IndividualEventsPage() {
 
   return (
     <div style={contentStyle}>
-      <form>
+      <form id="detailsForm">
         <div className="date-group">
           <label htmlFor="dateInput"></label>
           <h5 id="date">
