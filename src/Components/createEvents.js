@@ -8,12 +8,11 @@ import firebase from "../firebase/firebase";
 let db = firebase.firestore();
 let newDocRef;
 let director;
-let toContact;
 
 class createEvents extends React.Component {
   state = {
-    redirect: false
-  }
+    redirect: false,
+  };
   constructor(props) {
     super(props);
     this.state = {
@@ -67,6 +66,7 @@ class createEvents extends React.Component {
   };
   handleDateChange = (e) => {
     this.setState({ date: e.target.value });
+    console.log(e.target.value);
   };
 
   handleDescriptionChange = (e) => {
@@ -93,55 +93,47 @@ class createEvents extends React.Component {
     });
   };
 
-
-
   renderRedirect = () => {
     if (this.state.redirect) {
-      return <Redirect to= {director} />
+      return <Redirect to={director} />;
     }
-  }
-
+  };
 
   submitForm = () => {
-    
     db.collection("events").doc();
     newDocRef = db.collection("events").doc();
     newDocRef.set(this.state);
     const newLink = newDocRef.id;
     console.log(newLink);
     director = `/event/${newLink}`;
-    toContact = true
+    //DONT CHANGE, WORKS FOR LOCAL AND GITHUB
     console.log(director);
-    console.log(toContact);
     console.log(director);
-    
+
     //update current event with director and docID
-    newDocRef.update({
-      newLink: newLink,
-      director: director,
-    })
-    .then(function() {
-      console.log("Document successfully updated!");
-    })
-    .catch(function(error) {
+    newDocRef
+      .update({
+        newLink: newLink,
+        director: director,
+      })
+      .then(function () {
+        console.log("Document successfully updated!");
+      })
+      .catch(function (error) {
         // The document probably doesn't exist.
         console.error("Error updating document: ", error);
-    });
+      });
     this.setState({
-      redirect: true
-    })
-    
+      redirect: true,
+    });
   };
-  
+
   render() {
-    
     const contentStyle = {
       paddingTop: 40 + 20,
       paddingRight: 20,
       paddingLeft: 20,
     };
-  
-
 
     return (
       <div style={contentStyle}>
@@ -216,20 +208,16 @@ class createEvents extends React.Component {
               autoComplete="off"
             />
           </div>
-            {this.renderRedirect()}
-            <button
-            className="submit" 
-            onClick={this.submitForm}>
-              HYPRLNK IT
-            </button>
-
-          
+          {this.renderRedirect()}
+          <button className="submit" onClick={this.submitForm}>
+            HYPRLNK IT
+          </button>
         </form>
 
         {/* <img id="smiles" src={faces} alt="smiles"></img> */}
       </div>
-      
-    )};
+    );
   }
+}
 
 export default createEvents;
