@@ -1,7 +1,6 @@
 import React from "react";
 import firebase from "../firebase/firebase";
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import "../CSS/createEvents.css";
 
 function IndividualEventsPage() {

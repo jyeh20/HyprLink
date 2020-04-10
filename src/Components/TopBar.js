@@ -3,6 +3,7 @@ import hyprlink_title from "../Images/hyprlink_title2.png";
 import faces from "../Images/faces.png";
 import header from "../Images/header.png";
 import phrase from "../Images/phrase.png";
+import {Link} from "react-router-dom";
 
 const TopBar = ({ styles }) => {
   const topBarStyle = {
@@ -69,7 +70,9 @@ const TopBar = ({ styles }) => {
 
   return (
     <div style={topBarStyle}>
+      <Link to="/hyprlink">
       <img style={imageStyle} id="faces" src={faces} alt="faces"></img>
+      </Link>
       <img
         style={titleStyle}
         id="title"
