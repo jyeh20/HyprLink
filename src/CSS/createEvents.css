@@ -350,10 +350,11 @@ input[type="time"]::-webkit-inner-spin-button {
   padding-top: 0px;
   font-weight: lighter;
   color: #3d4254;
-  font-size: 15px;
+  font-size: 16px;
   text-align: left;
   margin-bottom: 0px;
   border: none;
+  font-family: "Varela", sans-serif;
 }
 
 #description {
@@ -361,36 +362,35 @@ input[type="time"]::-webkit-inner-spin-button {
   color: white;
   font-size: 20px;
   text-align: left;
-  height: 200px;
+  height: 135px;
   padding-bottom: 2px;
   margin-top: -3px;
   margin-bottom: 0px;
   border-bottom: 1px solid #3d4254;
+  overflow: scroll;
 }
 
 #link {
-  padding: 4px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  width: 70%;
+  margin-top: -3.1px;
+  margin-left: 10px;
   overflow: hidden;
-  font-weight: lighter;
   color: black;
   font-size: 20px;
   text-align: left;
-  height: 10%;
-  margin-top: -3px;
-  margin-bottom: 0px;
-  border-bottom: 1px solid #3d4254;
+  padding: 2px;
+  border: 2.5px solid white;
 }
 
-#icons {
-  height: 10%;
+.link-group {
+  white-space: nowrap;
 }
 
 #iconButton {
   font-size: 20px;
 
-  margin-top: -10px;
-  margin-bottom: 0px;
-  width: auto;
   border: 0.125px solid transparent;
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
@@ -399,4 +399,18 @@ input[type="time"]::-webkit-inner-spin-button {
     #5c258d,
     #4389a2
   ) !important;
+}
+
+#shareMessage,
+#copyMessage {
+  /* width: %; */
+  overflow: wrap;
+  padding-top: 0px;
+  font-weight: lighter;
+  color: white;
+  font-size: 20px;
+  text-align: left;
+  margin-bottom: 10px;
+  border: none;
+  font-family: "Varela", sans-serif;
 }

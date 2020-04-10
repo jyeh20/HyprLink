@@ -89,7 +89,8 @@ function IndividualEventsPage() {
 
         <div id="linkGroup" className="link-group">
           <label htmlFor="link"></label>
-          <h3 id="shareMessage">It's time to share your hyprlink:</h3>
+          <h3 id="shareMessage">It's time to share your Hyprlink!</h3>
+          🔗
           <input
             id="link"
             ref={clipboard.target}
@@ -103,7 +104,7 @@ function IndividualEventsPage() {
 
         <div className="share-group">
           <label htmlFor="share"></label>
-          <h3 id="copyMessage">Copy your link &amp; share to:</h3>
+          <h3 id="copyMessage">Copy the link &amp; share to:</h3>
           <label htmlFor="apps"></label>
           <ExtenderApp />
         </div>

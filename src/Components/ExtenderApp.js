@@ -21,7 +21,7 @@ import "../CSS/shareableIcons.css";
 class ExtenderApp extends Component {
   render() {
     const shareUrl = window.location.href;
-    const title = "Let's Link Up!:";
+    const title = "Let's Link Up!";
 
     return (
       <div className="Demo__container">
