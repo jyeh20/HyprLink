@@ -62,34 +62,36 @@ body {
   letter-spacing: 4px;
   color: white;
   font-family: "Lato", sans-serif;
+  border-radius: 0px;
 }
 
 #dateHeaderText {
   margin-top: -1px;
   margin-bottom: -1px;
-  position: relative;
+  font-weight: bolder;
   font-size: 2em;
   text-align: left;
   /* letter-spacing: 4px; */
   color: white;
   font-family: "varela", sans-serif;
-  text-shadow: 2px 2px 4px #0000001a;
+  text-shadow: 2px 2px 4px #0000000d;
+  border-radius: 0px;
 }
 #timeHeaderText {
   margin-top: -3px;
   margin-bottom: 2px;
-  position: relative;
+
   font-size: 0.95em;
   text-align: left;
   /* letter-spacing: 4px; */
   color: #330066;
   font-family: "varela", sans-serif;
   text-shadow: 2px 2px 4px #00000005;
+  border-radius: 0px;
 }
 
 #sharingForm {
-  vertical-align: middle;
-  min-width: 200px;
+  min-width: 100px;
   max-width: 350px;
   padding: 0px 20px 10px 20px;
   margin-left: auto;
@@ -107,6 +109,7 @@ input::placeholder,
 textarea::placeholder {
   color: #8c98a8;
   font-size: 1.3em;
+  border-radius: 0px;
 }
 
 /* on focus placeholder */
@@ -115,11 +118,13 @@ input:focus::placeholder,
 textarea:focus::placeholder {
   color: #0a0d13;
   font-size: 1.3em;
+  border-radius: 0px;
 }
 
 input:focus:focus::placeholder,
 textarea:focus:focus::placeholder {
   color: #8c98a8;
+  border-radius: 0px;
 }
 
 input {
@@ -130,6 +135,7 @@ input {
   height: 100%;
   padding-left: 10px;
   padding: 10px;
+  border-radius: 0px;
   /* padding: 0px 0px 0px 15px; */
 
   background: transparent;
@@ -143,38 +149,48 @@ input {
   -webkit-transition: all 0.3s ease-in-out;
   -moz-transition: all 0.3s ease-in-out;
   -ms-transition: all 0.3s ease-in-out;
+  visibility: visible !important;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
 }
 
 input:focus {
+  border-radius: 0px;
   background: #c5cdd9;
   color: #0a0d13;
 }
 input[type="time"]::-webkit-clear-button {
+  border-radius: 0px;
   display: none;
 }
 
 /* Removes the spin button */
 input[type="time"]::-webkit-inner-spin-button {
+  border-radius: 0px;
   display: none;
 }
 
 /* Removes the clear button from date inputs */
 input[type="date"]::-webkit-clear-button {
+  border-radius: 0px;
   display: none;
 }
 
 /* Removes the spin button */
 input[type="date"]::-webkit-inner-spin-button {
+  border-radius: 0px;
   display: none;
 }
 
 /* Always display the drop down caret */
 input[type="date"]::-webkit-calendar-picker-indicator {
+  border-radius: 0px;
   color: #2c3e50;
 }
 
 /* A few custom styles for date inputs */
 input[type="date"] {
+  border-radius: 0px;
   appearance: none;
   -webkit-appearance: none;
 
@@ -183,6 +199,7 @@ input[type="date"] {
 
 #nameInput {
   /* margin-left: -40px; */
+  border-radius: 0px;
   margin-top: 10px;
   margin-bottom: 15px;
   line-height: 0.875em;
@@ -203,14 +220,16 @@ input[type="date"] {
 input[type="date"],
 focus {
   /* font-size: 40px; */
-
+  border-radius: 0px;
   outline: none;
   box-shadow: none;
+  visibility: visible !important;
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
 }
 
 input[type="time"] {
+  border-radius: 0px;
   display: inline-flex;
   appearance: none;
   -webkit-appearance: none;
@@ -222,12 +241,15 @@ input[type="time"] {
   padding-left: 4px;
 }
 textarea {
+  border-radius: 0px;
   padding-left: 10px;
   width: 95%;
   max-width: 95%;
   height: 110px;
   max-height: 110px;
-
+  visibility: visible !important;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
   resize: none;
   background: transparent;
   outline: none;
@@ -245,6 +267,7 @@ textarea {
 }
 
 textarea:focus {
+  border-radius: 0px;
   background: #c5cdd9;
   color: #0a0d13;
 }
@@ -260,6 +283,7 @@ textarea:focus {
   padding: 0.5em;
   margin-bottom: 1em;
   margin-left: -5px;
+  margin-left: 10px;
   border-radius: 20px;
   width: 200px;
 
@@ -304,6 +328,7 @@ textarea:focus {
   border-bottom: none;
 }
 #endTime {
+  border-radius: 0px;
   padding-top: 5px;
   padding-bottom: 5px;
   max-width: 48%;
@@ -312,6 +337,7 @@ textarea:focus {
   position: relative;
 }
 #startTime {
+  border-radius: 0px;
   padding-top: 5px;
   padding-bottom: 5px;
   min-inline-size: 0%;
@@ -320,6 +346,7 @@ textarea:focus {
   border-right: 1px solid transparent;
 }
 #descriptionInput {
+  border-radius: 0px;
   border: solid 1px #a0acbd;
   margin-bottom: 10px;
   padding-top: 10px;
@@ -327,6 +354,7 @@ textarea:focus {
 }
 
 #name {
+  font-weight: bolder;
   font-family: "Varela", sans-serif;
   font-size: xx-large;
   overflow: auto;
@@ -336,7 +364,7 @@ textarea:focus {
   border-bottom: 1px solid #a0acbd;
   margin: 0px 0px 0px 0px;
   text-align: center;
-  text-shadow: 2px 2px 4px #0000001a;
+  text-shadow: 2px 2px 4px #0000000d;
 }
 
 #place {
@@ -410,11 +438,11 @@ textarea:focus {
 #shareMessage,
 #copyMessage {
   /* width: %; */
-  overflow: wrap;
+  overflow: auto;
   padding-top: 0px;
   font-weight: lighter;
   color: white;
-  font-size: 20px;
+  font-size: 15px;
   text-align: left;
   margin-bottom: 10px;
   border: none;
