@@ -3,6 +3,8 @@ import firebase from "../firebase/firebase";
 import { useEffect, useState } from "react";
 import "../CSS/createEvents.css";
 import { useClipboard } from "use-clipboard-copy";
+import clipboardIcon from "../Images/clipboard_icon.png";
+import check from "../Images/check.png";
 
 function IndividualEventsPage() {
   const clipboard = useClipboard({ copiedTimeout: 750 });
@@ -36,7 +38,6 @@ function IndividualEventsPage() {
       <form>
         <div className="date-group">
           <label htmlFor="dateInput"></label>
-          {/* <h5 id="date">Mon, Apr 20, 2020 ~ 4:20 PM - 9:20 PM</h5> */}
           <h5 id="date">
             {new Date(items.date).toDateString()} ~{" "}
             {new Date(
@@ -72,37 +73,37 @@ function IndividualEventsPage() {
 
         <div className="name-group">
           <label htmlFor="name"></label>
-          {/* <h5 id="name">420 Zoom Meet</h5> */}
           <h5 id="name">{items.name}</h5>
         </div>
 
         <div className="location-group">
           <label htmlFor="locationInput"></label>
-          {/* <h5 id="place">@ www.zoom.com/420</h5> */}
           <h5 id="place"> @ {items.location}</h5>
         </div>
 
         <div className="description-group">
           <label htmlFor="descriptionInput"></label>
           <h2 id="about">About this event:</h2>
-          {/* <h5 id="description">420 blaze it mfs</h5> */}
           <h5 id="description">{items.description}</h5>
         </div>
 
-        <div className="link-group">
+        <div id="linkGroup" className="link-group">
           <label htmlFor="link"></label>
           <h3 id="shareMessage">It's time to share your hyprlink:</h3>
-          <button
+          <input
             id="link"
-            onClick={() => clipboard.copy(window.location.href)}
-          >
-            {clipboard.copied ? "copied" : window.location.href}
+            ref={clipboard.target}
+            value={window.location.href}
+            readOnly
+          />
+          <button id="iconButton" onClick={clipboard.copy}>
+            {clipboard.copied ? "✅" : "📋"}
           </button>
         </div>
 
         <div className="share-group">
           <label htmlFor="share"></label>
-          <h3 id="copyMessage">Copy &amp; paste to share to:</h3>
+          <h3 id="copyMessage">Copy your link &amp; share to:</h3>
           <label htmlFor="apps"></label>
           <h3 id="apps">APPS</h3>
         </div>

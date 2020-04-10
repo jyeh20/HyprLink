@@ -228,7 +228,7 @@ input[type="time"]::-webkit-inner-spin-button {
   display: none;
 }
 
-button {
+#submitButton {
   font-family: "Montserrat", sans-serif;
   text-align: center;
   vertical-align: middle;
@@ -255,7 +255,7 @@ button {
   transition: all 0.4s ease 0s;
 }
 
-button:hover {
+#submitButton:hover {
   color: #ffffff !important;
   background-image: linear-gradient(
     to bottom right,
@@ -369,5 +369,34 @@ button:hover {
 }
 
 #link {
+  padding: 4px;
   overflow: hidden;
+  font-weight: lighter;
+  color: black;
+  font-size: 20px;
+  text-align: left;
+  height: 10%;
+  margin-top: -3px;
+  margin-bottom: 0px;
+  border-bottom: 1px solid #3d4254;
+}
+
+#icons {
+  height: 10%;
+}
+
+#iconButton {
+  font-size: 20px;
+
+  margin-top: -10px;
+  margin-bottom: 0px;
+  width: auto;
+  border: 0.125px solid transparent;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  background-image: linear-gradient(
+    to bottom right,
+    #5c258d,
+    #4389a2
+  ) !important;
 }

@@ -157,7 +157,6 @@ class createEvents extends React.Component {
             <h5>Location</h5>
             <input
               type="text"
-              // name="location"
               value={this.state.location}
               onChange={this.handleLocationChange}
               id="locationInput"
@@ -200,7 +199,6 @@ class createEvents extends React.Component {
             <textarea
               rows_1={this.state.rows_1}
               type="text"
-              // name="description"
               value={this.state.description}
               onChange={this.handleDescriptionChange}
               id="descriptionInput"
@@ -209,12 +207,14 @@ class createEvents extends React.Component {
             />
           </div>
           {this.renderRedirect()}
-          <button className="submit" onClick={this.submitForm}>
+          <button
+            id="submitButton"
+            className="submit"
+            onClick={this.submitForm}
+          >
             HYPRLNK IT
           </button>
         </form>
-
-        {/* <img id="smiles" src={faces} alt="smiles"></img> */}
       </div>
     );
   }
