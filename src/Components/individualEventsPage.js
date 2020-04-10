@@ -18,10 +18,12 @@ function IndividualEventsPage() {
     const db = firebase.firestore();
     db.collection("events")
       .doc(window.location.pathname.slice(7))
+      //DONT CHANGE, WORKS FOR LOCAL AND GITHUB
       .get()
       .then((items) => {
         const docData = items.data();
         console.log(window.location.pathname.slice(7));
+        //DONT CHANGE, WORKS FOR LOCAL AND GITHUB
         console.log(docData);
         setItems(docData);
       });

@@ -22,6 +22,7 @@ function AllEventsPage() {
         getData(item.id, item.id.slice(0, 5)),
         <h1 key={item.id}>
         <Link to={`hyprlink/event/${item.id}`}>{<button>{item.data().name}</button>}</Link>
+      {/*/DONT CHANGE, WORKS FOR LOCAL AND GITHUB*/}
         </h1>
       ))}
     </div>
