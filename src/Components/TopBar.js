@@ -70,7 +70,7 @@ const TopBar = ({ styles }) => {
 
   return (
     <div style={topBarStyle}>
-      <Link to="/hyprlink">
+      <Link to="/hyprlink/">
       <img style={imageStyle} id="faces" src={faces} alt="faces"></img>
       </Link>
       <img
