@@ -48,7 +48,7 @@ class App extends Component {
           <Route path="/hyprlink/events" exact component={AllEventsPage} />
           <Route path="/hyprlink" exact component={createEvents} />
           {/* <Route path="/newEvent" component={createEvents} /> */}
-          <Route path="/event/:id" component={IndividualEvents} />
+          <Route path="/hyprlink/event/:id" component={IndividualEvents} />
         </div>
       </Router>
     );

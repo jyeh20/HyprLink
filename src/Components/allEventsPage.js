@@ -21,7 +21,7 @@ function AllEventsPage() {
       {items.map(item => (
         getData(item.id, item.id.slice(0, 5)),
         <h1 key={item.id}>
-        <Link to={`/event/${item.id}`}>{<button>{item.data().name}</button>}</Link>
+        <Link to={`hyprlink/event/${item.id}`}>{<button>{item.data().name}</button>}</Link>
         </h1>
       ))}
     </div>
