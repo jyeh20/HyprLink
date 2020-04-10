@@ -2,9 +2,9 @@ import React from "react";
 import firebase from "../firebase/firebase";
 import { useEffect, useState } from "react";
 import "../CSS/createEvents.css";
+import "../CSS/shareableIcons.css";
 import { useClipboard } from "use-clipboard-copy";
-import clipboardIcon from "../Images/clipboard_icon.png";
-import check from "../Images/check.png";
+import ExtenderApp from "./ExtenderApp";
 
 function IndividualEventsPage() {
   const clipboard = useClipboard({ copiedTimeout: 750 });
@@ -105,7 +105,7 @@ function IndividualEventsPage() {
           <label htmlFor="share"></label>
           <h3 id="copyMessage">Copy your link &amp; share to:</h3>
           <label htmlFor="apps"></label>
-          <h3 id="apps">APPS</h3>
+          <ExtenderApp />
         </div>
       </form>
     </div>
