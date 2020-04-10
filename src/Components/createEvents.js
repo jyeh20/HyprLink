@@ -216,7 +216,7 @@ class createEvents extends React.Component {
             className="submit"
             onClick={this.submitForm}
           >
-            HYPRLNK IT
+            HYPRLINK IT
           </button>
         </form>
       </div>

@@ -351,8 +351,8 @@ textarea:focus {
   border-radius: 0px;
   padding-top: 5px;
   padding-bottom: 5px;
-  max-width: 48%;
-  min-width: 42%;
+  max-width: 192px;
+  min-width: 10px;
   border-left: 1px solid transparent;
   position: relative;
 }
@@ -361,8 +361,8 @@ textarea:focus {
   padding-top: 5px;
   padding-bottom: 5px;
   min-inline-size: 0%;
-  min-width: 42%;
-  max-width: 48%;
+  max-width: 192px;
+  min-width: 10px;
   border-right: 1px solid transparent;
 }
 #descriptionInput {
