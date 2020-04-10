@@ -2,8 +2,10 @@ import React from "react";
 import firebase from "../firebase/firebase";
 import { useEffect, useState } from "react";
 import "../CSS/createEvents.css";
+import { useClipboard } from "use-clipboard-copy";
 
 function IndividualEventsPage() {
+  const clipboard = useClipboard({ copiedTimeout: 750 });
   const contentStyle = {
     paddingTop: 40 + 20,
     paddingRight: 20,
@@ -62,7 +64,12 @@ function IndividualEventsPage() {
         <div className="link-group">
           <label htmlFor="link"></label>
           <h3 id="shareMessage">It's time to share your hyprlink:</h3>
-          <h3 id="link">{window.location.href}</h3>
+          <button
+            id="link"
+            onClick={() => clipboard.copy(window.location.href)}
+          >
+            {clipboard.copied ? "copied" : window.location.href}
+          </button>
         </div>
 
         <div className="share-group">
