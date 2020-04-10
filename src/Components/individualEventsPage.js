@@ -16,7 +16,7 @@ function IndividualEventsPage() {
 
   const [items, setItems] = useState([]);
 
-  useEffect(() => {
+  useEffect((e) => {
     const db = firebase.firestore();
     db.collection("events")
       .doc(window.location.pathname.slice(7))
@@ -27,6 +27,7 @@ function IndividualEventsPage() {
         console.log(window.location.pathname.slice(7));
         //DONT CHANGE, WORKS FOR LOCAL AND GITHUB
         console.log(docData);
+
         setItems(docData);
       });
   }, []);
@@ -35,42 +36,39 @@ function IndividualEventsPage() {
 
   return (
     <div style={contentStyle}>
+      <form id="headerGroup">
+        <h2 id="timeHeaderText">
+          {new Date(
+            0,
+            0,
+            0,
+            new String(items.startTime).slice(0, 2),
+            new String(items.startTime).slice(3, 5),
+            0,
+            0
+          ).toLocaleString("en-US", {
+            hour: "numeric",
+            minute: "numeric",
+            hour12: true,
+          })}{" "}
+          -{" "}
+          {new Date(
+            0,
+            0,
+            0,
+            new String(items.endTime).slice(0, 2),
+            new String(items.endTime).slice(3, 5),
+            0,
+            0
+          ).toLocaleString("en-US", {
+            hour: "numeric",
+            minute: "numeric",
+            hour12: true,
+          })}
+        </h2>
+        <h2 id="dateHeaderText">{new Date(items.date).toDateString()}</h2>
+      </form>
       <form id="detailsForm">
-        <div className="date-group">
-          <label htmlFor="dateInput"></label>
-          <h5 id="date">
-            {new Date(items.date).toDateString()} ~{" "}
-            {new Date(
-              0,
-              0,
-              0,
-              new String(items.startTime).slice(0, 2),
-              new String(items.startTime).slice(3, 5),
-              0,
-              0
-            ).toLocaleString("en-US", {
-              hour: "numeric",
-              minute: "numeric",
-              hour12: true,
-            })}{" "}
-            -{" "}
-            {new Date(
-              0,
-              0,
-              0,
-              new String(items.endTime).slice(0, 2),
-              new String(items.endTime).slice(3, 5),
-              0,
-              0
-            ).toLocaleString("en-US", {
-              hour: "numeric",
-              minute: "numeric",
-              hour12: true,
-            })}
-          </h5>
-          <label htmlFor="timeInput"></label>
-        </div>
-
         <div className="name-group">
           <label htmlFor="name"></label>
           <h5 id="name">{items.name}</h5>
@@ -78,7 +76,7 @@ function IndividualEventsPage() {
 
         <div className="location-group">
           <label htmlFor="locationInput"></label>
-          <h5 id="place"> @ {items.location}</h5>
+          <h5 id="place"> 📍{items.location}</h5>
         </div>
 
         <div className="description-group">
@@ -86,7 +84,8 @@ function IndividualEventsPage() {
           <h2 id="about">About this event:</h2>
           <h5 id="description">{items.description}</h5>
         </div>
-
+      </form>
+      <form id="sharingForm">
         <div id="linkGroup" className="link-group">
           <label htmlFor="link"></label>
           <h3 id="shareMessage">It's time to share your Hyprlink!</h3>
