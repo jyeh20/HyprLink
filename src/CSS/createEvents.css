@@ -371,10 +371,11 @@ input[type="time"]::-webkit-inner-spin-button {
 }
 
 #link {
+  position: relative;
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
   width: 70%;
-  margin-top: -3.1px;
+  margin-top: 5px;
   margin-left: 10px;
   overflow: hidden;
   color: black;
