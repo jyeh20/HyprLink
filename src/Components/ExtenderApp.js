@@ -1,6 +1,5 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 import {
-  
   FacebookShareButton,
   FacebookMessengerShareButton,
   FacebookMessengerIcon,
@@ -15,20 +14,17 @@ import {
   WhatsappIcon,
   RedditIcon,
   EmailIcon,
-  
 } from "react-share";
 
 import "../CSS/shareableIcons.css";
 
-
 class ExtenderApp extends Component {
   render() {
     const shareUrl = window.location.href;
-    const title = 'I am attending, we should link up at: : ';
+    const title = "Let's Link Up!:";
 
     return (
       <div className="Demo__container">
-      
         <div className="Demo__some-network">
           <TwitterShareButton
             url={shareUrl}
@@ -55,7 +51,10 @@ class ExtenderApp extends Component {
         </div>
 
         <div className="Demo__some-network">
-          <LinkedinShareButton url={shareUrl} className="Demo__some-network__share-button">
+          <LinkedinShareButton
+            url={shareUrl}
+            className="Demo__some-network__share-button"
+          >
             <LinkedinIcon size={20} round />
           </LinkedinShareButton>
         </div>
@@ -67,7 +66,6 @@ class ExtenderApp extends Component {
           >
             <FacebookIcon size={20} round />
           </FacebookShareButton>
-
         </div>
         <div className="Demo__some-network">
           <RedditShareButton
@@ -79,8 +77,6 @@ class ExtenderApp extends Component {
           >
             <RedditIcon size={20} round />
           </RedditShareButton>
-
-          
         </div>
         <div className="Demo__some-network">
           <EmailShareButton
@@ -108,4 +104,3 @@ class ExtenderApp extends Component {
 }
 
 export default ExtenderApp;
-    
