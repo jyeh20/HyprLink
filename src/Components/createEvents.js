@@ -8,7 +8,6 @@ import firebase from "../firebase/firebase";
 let db = firebase.firestore();
 let newDocRef;
 let director;
-let toContact;
 
 class createEvents extends React.Component {
   state = {
@@ -110,9 +109,7 @@ class createEvents extends React.Component {
     const newLink = newDocRef.id;
     console.log(newLink);
     director = `/event/${newLink}`;
-    toContact = true
     console.log(director);
-    console.log(toContact);
     console.log(director);
     
     //update current event with director and docID
