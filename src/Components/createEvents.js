@@ -20,7 +20,7 @@ class createEvents extends React.Component {
       location: "",
       startTime: "00:00",
       endTime: "00:00",
-      date: new Date(),
+      date: new Date(1, 1, 0),
       description: "",
       rows: 1,
       minRows: 1,

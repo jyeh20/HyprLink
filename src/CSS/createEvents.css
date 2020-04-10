@@ -107,15 +107,22 @@ body {
 }
 input::placeholder,
 textarea::placeholder {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
   color: #8c98a8;
   font-size: 1.3em;
   border-radius: 0px;
+  width: 70%;
 }
 
 /* on focus placeholder */
 
 input:focus::placeholder,
 textarea:focus::placeholder {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
   color: #0a0d13;
   font-size: 1.3em;
   border-radius: 0px;
@@ -123,11 +130,17 @@ textarea:focus::placeholder {
 
 input:focus:focus::placeholder,
 textarea:focus:focus::placeholder {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
   color: #8c98a8;
   border-radius: 0px;
 }
 
 input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
   font-family: "varela", sans-serif;
   font-size: 0.875em;
   width: 93%;
@@ -242,6 +255,9 @@ input[type="time"] {
   padding-left: 4px;
 }
 textarea {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
   border-radius: 0px;
   padding-left: 10px;
   width: 95%;
@@ -268,6 +284,9 @@ textarea {
 }
 
 textarea:focus {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
   border-radius: 0px;
   background: #c5cdd9;
   color: #0a0d13;
@@ -347,6 +366,9 @@ textarea:focus {
   border-right: 1px solid transparent;
 }
 #descriptionInput {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
   border-radius: 0px;
   border: solid 1px #a0acbd;
   margin-bottom: 10px;
@@ -412,21 +434,20 @@ textarea:focus {
   margin-left: 10px;
   overflow: hidden;
   color: black;
-  font-size: 20px;
+  font-size: 12px;
   text-align: left;
   padding: 2px;
   padding-left: 10px;
   border: 1px solid white;
 }
 
-.link-group {
+/* .link-group {
   white-space: nowrap;
-}
+} */
 
 #iconButton {
-  font-size: 20px;
-
-  border: 0.125px solid transparent;
+  width: 10%;
+  border: 0.125px solid #974df7;
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
   background-image: linear-gradient(
