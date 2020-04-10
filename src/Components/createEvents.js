@@ -7,8 +7,13 @@ import firebase from "../firebase/firebase";
 
 let db = firebase.firestore();
 let newDocRef;
+let director;
+let toContact;
 
 class createEvents extends React.Component {
+  state = {
+    redirect: false
+  }
   constructor(props) {
     super(props);
     this.state = {
@@ -88,19 +93,32 @@ class createEvents extends React.Component {
     });
   };
 
+
+
+  renderRedirect = () => {
+    if (this.state.redirect) {
+      return <Redirect to= {director} />
+    }
+  }
+
+
   submitForm = () => {
-  
+    
     db.collection("events").doc();
     newDocRef = db.collection("events").doc();
     newDocRef.set(this.state);
     const newLink = newDocRef.id;
     console.log(newLink);
-    const redirect = `/events/${newLink}`;
-    console.log(redirect);
+    director = `/event/${newLink}`;
+    toContact = true
+    console.log(director);
+    console.log(toContact);
+    console.log(director);
+    
+    //update current event with director and docID
     newDocRef.update({
       newLink: newLink,
-      redirect: redirect,
-      toContact: true
+      director: director,
     })
     .then(function() {
       console.log("Document successfully updated!");
@@ -109,43 +127,20 @@ class createEvents extends React.Component {
         // The document probably doesn't exist.
         console.error("Error updating document: ", error);
     });
-    console.log(newDocRef);
-
-    // db.collection("events")
-    //   .add(this.state)
-    //   .then(function (docRef) {
-    //     console.log("Document written with ID: ", docRef.id);
-    //     newLink = docRef.id;
-    //     this.setState({redirect: `/events/${newLink}`});
-    //     let newDoc = db.collection("events").doc(newLink);
-    //     newDoc.update({
-    //       redirect: newLink
-    //     })
-    //     .then(function() {
-    //       console.log("Document successfully updated.");
-    //       this.setState({toContact: true}); 
-    //     })
-    //     .catch(function(error) {
-    //       console.error("Error updating doccument: ", error);
-    //     })
-    //       })
-    //   .catch(function (error) {
-    //     console.error("Error adding document: ", error);
-    //   });
-
+    this.setState({
+      redirect: true
+    })
     
-      
   };
   
   render() {
+    
     const contentStyle = {
       paddingTop: 40 + 20,
       paddingRight: 20,
       paddingLeft: 20,
     };
-        // if (this.state.toContact === true) {
-    //   return <Redirect to={newDocRef.redirect} />
-    // }
+  
 
 
     return (
@@ -221,7 +216,7 @@ class createEvents extends React.Component {
               autoComplete="off"
             />
           </div>
-
+            {this.renderRedirect()}
             <button
             className="submit" 
             onClick={this.submitForm}>

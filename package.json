@@ -1,6 +1,6 @@
 {
-  "homepage": "https://jyeh20.github.io/hyprlink/",
-  "name": "hyprlnk",
+  "homepage": "https://jyeh20.github.io/hyprlink",
+  "name": "hyprlink",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
