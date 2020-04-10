@@ -35,7 +35,7 @@ function IndividualEventsPage() {
         <div className="date-group">
           <label htmlFor="dateInput"></label>
           {/* <h5 id="date">Mon, Apr 20, 2020 ~ 4:20 PM - 9:20 PM</h5> */}
-          <h5 id="date">{items.date}</h5>
+          <h5 id="date">{new Date(items.date).toDateString()}</h5>
           <label htmlFor="timeInput"></label>
           <h5>{items.startTime}</h5>
 
