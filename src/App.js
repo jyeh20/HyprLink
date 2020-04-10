@@ -46,7 +46,7 @@ class App extends Component {
       <Router>
         <TopBar styles={styles} />
         <div className="App">
-          <Route path="/hyprlink/events" exact component={AllEventsPage} />
+          <Route path="/events" exact component={AllEventsPage} />
           <Route path="/hyprlink" exact component={createEvents} />
           {/* <Route path="/newEvent" component={createEvents} /> */}
           <Route path="/event/:id" component={IndividualEventsPage} />

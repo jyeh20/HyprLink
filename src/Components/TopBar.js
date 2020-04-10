@@ -79,12 +79,14 @@ const TopBar = ({ styles }) => {
         src={hyprlink_title}
         alt="hyprlink"
       ></img>
+      <Link to= "/events">
       <img
         style={phraseStyle}
         id="phrase"
         src={phrase}
         alt="LET'S LINK UP!"
       ></img>
+      </Link>
     </div>
   );
 };
