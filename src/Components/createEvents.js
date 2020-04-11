@@ -105,7 +105,7 @@ class createEvents extends React.Component {
     newDocRef.set(this.state);
     const newLink = newDocRef.id;
     console.log(newLink);
-    director = `/hyprlink/${newLink}`;
+    director = `/event/${newLink}`;
     //DONT CHANGE, WORKS FOR LOCAL AND GITHUB
     console.log(director);
     console.log(director);

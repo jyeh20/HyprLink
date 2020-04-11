@@ -87,7 +87,7 @@ const TopBar = ({ styles }) => {
         alt="hyprlink"
       ></img>
 
-      <Link to="/hyprlink/events">
+      <Link to="/events">
         <img style={titleStyle} id="faces" src={faces} alt="faces"></img>
       </Link>
 
