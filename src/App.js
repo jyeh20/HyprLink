@@ -49,12 +49,13 @@ class App extends Component {
       <Router>
         <TopBar styles={styles} />
         <div className="App">
-          <Route path="/events" exact component={AllEventsPage} />
+          <Route path="/hyprlink/events" exact component={AllEventsPage} />
           <Route path="/hyprlink" exact component={createEvents} />
           {/*DONT CHANGE, WORKS FOR LOCAL AND GITHUB*/}
           {/* <Route path="/newEvent" component={createEvents} /> */}
-          <Route path="/event/:id" component={IndividualEventsPage} />
-          {/*DONT CHANGE, WORKS FOR LOCAL AND GITHUB*/}
+          <Route path="/hyprlink/:id" component={IndividualEventsPage} />
+          {/* /events/:id
+          DONT CHANGE, WORKS FOR LOCAL AND GITHUB*/}
         </div>
       </Router>
     );

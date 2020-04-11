@@ -21,7 +21,7 @@ export default function IndividualEventsPage() {
   useEffect((e) => {
     const db = firebase.firestore();
     db.collection("events")
-      .doc(window.location.pathname.slice(7))
+      .doc(window.location.pathname.slice(9))
       //DONT CHANGE, WORKS FOR LOCAL AND GITHUB
       .get()
       .then((items) => {
